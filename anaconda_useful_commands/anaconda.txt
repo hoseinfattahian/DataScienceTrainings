@@ -1,0 +1,25 @@
+https://www.anaconda.com/products/individual
+
+conda list    # You can check out your own install by entering conda list into your terminal
+
+conda upgrade conda  # Updates conda
+conda upgrade --all  # Updates all installed packages
+
+conda install package_name   # Installs package_name. For example: conda install numpy
+			     # Or conda install numpy scipy pandas
+			     # conda install numpy=1.10  installs the 1.10 version of numpy
+
+conda remove package_name    # Uninstalls the package package_name
+
+
+conda search *search_term*   # Serachs among packages the names containing search_term. For example conda search jupyter*
+
+conda create -n env_name list of packages  # Creats an environment with name env_name with the list of packages
+					   # for example conda create -n py3 python=3.6 numpy pandas
+
+activate env_name	     # (Windows) Switches to the environment env_name
+conda activate env_name	     # (Linux) Switches to the environment env_name
+
+conda env export > environment.yaml  # Exports the environment setting to a file(this file contains all packages versions)
+conda env create -f environment.yaml # Creates an environment using given environment settings
+conda env list			     # lists all environments
