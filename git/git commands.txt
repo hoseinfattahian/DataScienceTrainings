@@ -19,3 +19,6 @@ git add FILE_NAME1 FILE_NAME2 ...		# This command adds the untracked file FILE_N
 										# Moving a file from the Staging Index back to the Working Directory will unstage the file
 git add	.								# This command adds all untracked file FILE_NAME to the staging index
 git restore --staged <file>				# It unstage all files that exist in the Staging Index to the Working Directory
+
+git commit								# Opens an editor to write a comment and the it commits the Staging Index to the repo
+git commit -m "Initial commit"			# Bypass the openning the editor with -m and the following comment
