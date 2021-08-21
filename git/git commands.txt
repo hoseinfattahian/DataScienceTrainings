@@ -1,16 +1,16 @@
 git clone <path-to-repository-to-clone>
 git status
 
-git log						# Opens the log of all commits
-							# to sarch inside the log file type /SEARCH_TEXT
-							# to quit press q
+git log	= git log --decorate	# Opens the log of all commits
+								# to sarch inside the log file type /SEARCH_TEXT
+								# to quit press q
 
-git log --oneline			# summarize the log to a SHA and the commit message. Note that the option is --oneline NOT --online
-git log --status			# display modified files in commits and the number of modified/added/removed lined
-git log -p/ git log --patch	# display the changed lines in the modified files
-git log -p -w				# -w removes whitespace changes in the output
-git log -p START_SHA		# display all commits that have START_SHA as their SHA value for example:git log -p fdf5493
-git show START_SHA			# It's equal to git log -p START_SHA but it displays only one commit as the result
+git log --oneline				# summarize the log to a SHA and the commit message. Note that the option is --oneline NOT --online
+git log --status				# display modified files in commits and the number of modified/added/removed lined
+git log -p/ git log --patch		# display the changed lines in the modified files
+git log -p -w					# -w removes whitespace changes in the output
+git log -p START_SHA			# display all commits that have START_SHA as their SHA value for example:git log -p fdf5493
+git show START_SHA				# It's equal to git log -p START_SHA but it displays only one commit as the result
 
 
 git add FILE_NAME1 FILE_NAME2 ...		# This command adds the untracked file FILE_NAME1 and 2 to the staging index
@@ -45,5 +45,7 @@ git tag <tagname>						# When you use git tag <tagname>, Git will create a tag a
 										# It will be tagged without a message (this is a lightweight tag)
 										# Push annotated tags, keep lightweight local
 git tag -a -m <msg> <tagname>			# When you use git tag -a -m <msg> <tagname>, Git will tag the commit and annotate it with the provided message
+git push --tags							# Pushes all tags to the remote repository
+git tag -d <tagname>					# Delets the tag tagname
 
 
