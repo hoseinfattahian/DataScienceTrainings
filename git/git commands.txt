@@ -52,7 +52,7 @@ git tag -a <tagname> <SHA>				# Assigns a tag to the specific commit referenced 
 
 git branch								# List all branches
 git branch <branchname>					# creates branch with the name branchname
-git push origin <branchname>			# Pushes the branch branchname to the remote repo
+git push origin <branchname>			# Pushes the branch branchname to the remote repository
 
 
 
