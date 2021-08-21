@@ -47,5 +47,7 @@ git tag <tagname>						# When you use git tag <tagname>, Git will create a tag a
 git tag -a -m <msg> <tagname>			# When you use git tag -a -m <msg> <tagname>, Git will tag the commit and annotate it with the provided message
 git push --tags							# Pushes all tags to the remote repository
 git tag -d <tagname>					# Delets the tag tagname
+git tag -a <tagname> <SHA>				# Assigns a tag to the specific commit referenced by SHA
+
 
 
