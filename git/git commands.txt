@@ -23,3 +23,27 @@ git restore --staged <file>				# It unstage all files that exist in the Staging 
 git commit								# Opens an editor to write a comment and the it commits the Staging Index to the repo
 git commit -m "Initial commit"			# Bypass the openning the editor with -m and the following comment
 git diff								# The git diff command can be used to see changes that have been made but haven't been committed, yet.
+
+
+
+										# Globbing Crash Course
+										# Let's say that you add 50 images to your project, but want Git to ignore all of them. Does this mean you have to list each and every filename in the .gitignore file? Oh gosh no, that would be crazy! Instead, you can use a concept called globbing.
+
+										# Globbing lets you use special characters to match patterns/characters. In the .gitignore file, you can use the following:
+
+										# blank lines can be used for spacing
+										# # - marks line as a comment
+										# * - matches 0 or more characters
+										# ? - matches 1 character
+										# [abc] - matches a, b, or c
+										# ** - matches nested directories - a/**/z matches
+										# a/z
+										# a/b/z
+										# a/b/c/z
+		
+git tag <tagname>						# When you use git tag <tagname>, Git will create a tag at the current revision but will not prompt you for an annotation. 
+										# It will be tagged without a message (this is a lightweight tag)
+										# Push annotated tags, keep lightweight local
+git tag -a -m <msg> <tagname>			# When you use git tag -a -m <msg> <tagname>, Git will tag the commit and annotate it with the provided message
+
+
