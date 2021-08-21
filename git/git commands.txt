@@ -22,3 +22,4 @@ git restore --staged <file>				# It unstage all files that exist in the Staging 
 
 git commit								# Opens an editor to write a comment and the it commits the Staging Index to the repo
 git commit -m "Initial commit"			# Bypass the openning the editor with -m and the following comment
+git diff								# The git diff command can be used to see changes that have been made but haven't been committed, yet.
