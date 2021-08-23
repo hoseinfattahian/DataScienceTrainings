@@ -1,5 +1,5 @@
 git clone <path-to-repository-to-clone>
-git status					# Prints the status of the git and untracked and uncommited files
+git status					# Prints the status of the git and untracked and uncommited files.
 
 git log	= git log --decorate	# Opens the log of all commits
 								# to sarch inside the log file type /SEARCH_TEXT
