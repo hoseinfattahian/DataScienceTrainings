@@ -66,6 +66,13 @@ git merge <another-branch>		# Merges the <another-branch> to the currently check
 								# This is called Fast-Forward Merge
 git merge --abort				# Aborts the merge
 
+
+git commit --amend				# If your Working Directory is clean, this command will let you provide a new commit message.
+								# To include any changes in the files that you want to add:
+								# 1- Edit the file(s)
+								# 2- Save the file(s)
+								# 3- Stage the file(s)
+								# 4- And run git commit --amend
 											
 
 
