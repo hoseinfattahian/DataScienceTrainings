@@ -61,6 +61,14 @@ git checkout <branchname>				# Switches to the branch <branchname>. Note that yo
 git log --oneline --decorate --graph --all		# List all commits from all branches
 
 
+git merge <another-branch>		# Merges the <another-branch> to the currently checkedout branch. This is called "merge in"
+								# If branch B is created from A and A has not any change, merging B to A is like checking out B to A and commiting A.
+								# This is called Fast-Forward Merge
+								
+
+											
+
+
 
 
 
