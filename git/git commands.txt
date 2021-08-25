@@ -73,7 +73,54 @@ git commit --amend				# If your Working Directory is clean, this command will le
 								# 2- Save the file(s)
 								# 3- Stage the file(s)
 								# 4- And run git commit --amend
+								
+git revert <SHA-of-commit-to-revert>	# This command revert any changes in the last commit.  
+										# This command add another commit that is similar to the first commit before reverted commit.
+										# In other word CommitA--->CommitB---->(revertAction)--->CommitA
+										# You have the information about commitB that was reverted
+										# In reset: CommitA---->CommitB---->(Reset). In this command CommitB is completely deleted
+										# So you can not access the changes in CommitB.
+										# RESET IS DANGEROUS
+										# To alleviate the stress a bit, Git does keep track of everything for about 30 days before it completely erases anything.
+										# To access this content, you'll need to use the (git reflog) command. Check out these links for more info
 											
+git reset <reference-to-commit>			# DANGEROUS----------for example git reset HEAD~6
+
+										# You already know that you can reference commits by their SHA, by tags, branches, and the special HEAD pointer. 
+										# Sometimes that's not enough, though. There will be times when you'll want to reference a commit relative to another commit. 
+										# For example, there will be times where you'll want to tell Git about the commit that's one before the current commit…or two before the current commit. 
+										# There are special characters called "Ancestry References" that we can use to tell Git about these relative references. Those characters are:
+
+										# ^ – indicates the parent commit
+										# ~ – indicates the first parent commit
+										#	Here's how we can refer to previous commits:
+
+										#	the parent commit – the following indicate the parent commit of the current commit
+										# HEAD^
+										# HEAD~
+										# HEAD~1
+										# 	the grandparent commit – the following indicate the grandparent commit of the current commit
+										# HEAD^^
+										# HEAD~2
+										# 	the great-grandparent commit – the following indicate the great-grandparent commit of the current commit
+										# HEAD^^^
+										# HEAD~3
+										# 	The main difference between the ^ and the ~ is when a commit is created from a merge. 
+										# 	A merge commit has two parents. With a merge commit, the ^ reference is used to indicate the first parent of the commit while ^2 indicates the second parent. 
+										# 	The first parent is the branch you were on when you ran git merge while the second parent is the branch that was merged in
+										
+git reset --mixed HEAD~1				# Default: reset the Head pointer to the parent and commited changes to the Working Directory
+git reset --soft HEAD~1					# Default: reset the Head pointer to the parent and commited changes to the Staging Index
+git reset --hard HEAD~1					# Default: reset the Head pointer to the parent and commited changes to the Trash
+
+git branch backup						# Backups the branch
+
+git push <remote-shortname> <branch>	# pushes the branch <branch> to the remote repo. For example git push origin master
+git pull <remote-shortname> <branch>	# Gets the changes on the remote repo to the local repository. For example git pull origin master
+										# This command automatically merges the changes from origin/master to the local master and it may cause conflicts
+
+git fetch <remote-shortname> <branch>	# This is the same as git pull but it does not merge the changes from origin/master to the local master
+git merge origin/master					# Ths command merges the fetched changes to the local master
 
 
 
