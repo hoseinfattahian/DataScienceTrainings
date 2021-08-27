@@ -1,12 +1,22 @@
 git clone <path-to-repository-to-clone>
 git status					# Prints the status of the git and untracked and uncommited files.
 
+git config --system			# System level config
+git config --global			# User level config
+git config					# Project level config
+
 git log	= git log --decorate	# Opens the log of all commits
 								# to sarch inside the log file type /SEARCH_TEXT
 								# to quit press q
+								
+git log -n <number>				# limits the log to show <number> commits in the output	
+git log --since=2018-01-01		# Shows the commits since the given date			
+git log --until=2018-01-01		# Shows the commits until the given date
+git log --author="Kevin"
+git log --grep="search keyword" # search among commit messages and displays the commits that have the keyword
 
 git log --oneline				# summarize the log to a SHA and the commit message. Note that the option is --oneline NOT --online
-git log --status				# display modified files in commits and the number of modified/added/removed lined
+git log --stat					# display modified files in commits and the number of modified/added/removed lined
 git log -p/ git log --patch		# display the changed lines in the modified files
 git log -p -w					# -w removes whitespace changes in the output
 git log -p START_SHA			# display all commits that have START_SHA as their SHA value for example:git log -p fdf5493
@@ -18,13 +28,19 @@ git add FILE_NAME1 FILE_NAME2 ...		# This command adds the untracked file FILE_N
 										# If a file has been moved, then it has been "staged". 
 										# Moving a file from the Staging Index back to the Working Directory will unstage the file
 git add	.								# This command adds all untracked file FILE_NAME to the staging index
+git rm FILE_NAME1 FILE_NAME2			# deletes the files
+git mv oldName newName					# Rename the given file  
+git mv fileName path/fileName			# Moves the file to the given path
+
 git restore --staged <file>				# It unstage all files that exist in the Staging Index to the Working Directory
 
 git commit								# Opens an editor to write a comment and the it commits the Staging Index to the repo
 git commit -m "Initial commit"			# Bypass the openning the editor with -m and the following comment
 git diff								# The git diff command can be used to see changes that have been made but haven't been committed, yet.
-
-
+										# git diff shows the difference between untracked files and staged files
+git diff --staged						# Shows the difference between staged files and repo files
+git diff --cached						# Is the same as git diff --staged
+git diff --color-words					# Highlights the changes with different colors
 
 										# Globbing Crash Course
 										# Let's say that you add 50 images to your project, but want Git to ignore all of them. Does this mean you have to list each and every filename in the .gitignore file? Oh gosh no, that would be crazy! Instead, you can use a concept called globbing.
@@ -123,7 +139,35 @@ git fetch <remote-shortname> <branch>	# This is the same as git pull but it does
 git merge origin/master					# Ths command merges the fetched changes to the local master
 
 
+git shortlog							# Displays log and the authors of the project that is sorted alphabetically based on author's name.
 
+git shortlog -s -n						# Displays the list of authors and the number of commits for each of them 
+git log --author=Surma					# Displays the commits of the given author
 
+git log --grep=bug						# Filters the log based on given key in the description of commits
+
+git remote add <name> <url-of-remote>	# This command adds a url of repo to the list of repository. If you have cloned from repository, you have 
+										# by default two remote url: One for fetch and one for push
+										
+git remote -v 							# List all remote URLs. For example:
+										# 					origin  https://github.com/GoogleChrome/lighthouse.git (fetch)
+										#					origin  https://github.com/GoogleChrome/lighthouse.git (push)
+										
+										
+git remote add <name> <url-of-origin-that-you-forked-from> 	# ORIGIN_REPO(upstream)----(Forked)------>YOUR_REMOTE_REPO(origin)
+															# You have already the origin url in your local that you can fetch YOUR_REMOTE_REPO changes
+															# You can add ORIGIN_REPO url into your local config to fetch directly from ORIGIN_REPO(upstream)
+															
+git remote add upstream <url-of-origin-that-you-forked-from>	# Example of above command		
+
+git remote rename <old-name> <new-name>	
+
+git rebase -i <base>					# For example : git rebase -i HEAD~3
+										# This command merges 3 last commits to a single commit. 
+										# Be careful and backup current branch by executing git branch backup
+										# -i indicates interactive mode
+										# commit0---commit1---commit2---commit3----commit4(head)
+										# By executing above command we get:
+										# commit0----commit5(head) that commit5 is squashs of commit1-4
 
 
