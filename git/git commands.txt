@@ -71,6 +71,7 @@ git branch <branchname>					# creates branch with the name branchname
 git push origin <branchname>			# Pushes the branch branchname to the remote repository.
 git branch -d <branchname>				# deletes the branch <branchname>. Git doesn't let you a branch that has uncommited or unmerged changes.
 git branch -D <branchname>				# Force deletes the branch even if it has uncommited or unmerged changes.
+git push origin --delete <branch_name>	# Deletes remote branch
 
 git stash -a -u = git stash --all --include-untracked		# Save all uncommited files included untracked and ignore files
 git checkout <branchname>				# Switches to the branch <branchname>. Note that you should commit all changes OR stash changes befor switching to the branch
